@@ -1,7 +1,7 @@
 var total = 0;
 var amount;
 var AIamount;
-var AItotal = 0;
+var AItotal=0;
 
 (function () {
 
@@ -11,19 +11,17 @@ var AItotal = 0;
 
     document.getElementById("hit").addEventListener("click", function () {
         amount = randomGenerateCard(1, 10);
-        AIamount = randomGenerateCard(1, 10);
-
-        var sum = total + amount;
-        var AIsum = AItotal + AIamount;
 
 
-        AItotal = AIsum;
-        total = sum;
+        total = total + amount;
 
-        alert("your total is: "+ total+ ". \n the dealer's total is: "+AItotal);
+
+        console.log(total);
+        alert("your total is: " + total);
 
         if (total === 21) {
             alert("BLACKJACK!");
+
         }
 
         if (total > 21) {
@@ -31,27 +29,46 @@ var AItotal = 0;
             total = -50;
         }
 
-        if(AItotal === 21){
-            alert("Dealer has blackjack, you lose.");
-        }
 
-        if(AItotal > 21){
-            alert("Dealer went broke");
-            AItotal= -50;
-        }
     });
 
     document.getElementById("hold").addEventListener("click", function () {
-        if(total>AItotal){
+        do {
+            AIamount = randomGenerateCard(1, 10);
+            AItotal = AItotal + AIamount;
+
+            console.log(AItotal);
+
+        } while (AItotal < 17);
+
+
+        alert("the dealer's total is: " + AItotal);
+
+        if (AItotal === 21) {
+            alert("Dealer has blackjack, you lose.");
+        }
+
+        if (AItotal > 21) {
+            alert("Dealer went broke");
+            AItotal = -50;
+        }
+        if (total > AItotal) {
             alert("You win");
         }
 
-        if (AItotal>total){
+        if (AItotal > total) {
             alert("Dealer wins");
         }
-        if(AItotal===total){
+        if (AItotal === total) {
             alert("It's a tie!");
         }
-    })
+    });
+
+    document.getElementById("reset").addEventListener("click", function () {
+        total = 0;
+        AItotal = 0;
+
+        alert("your total is: " + total + ". \n the dealer's total is: " + AItotal + "\n Reset complete")
+    });
 
 })();

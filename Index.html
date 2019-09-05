@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Blackjack</title>
-    <link href="Assets/Index.scss" rel="stylesheet" type="text/css">
+    <link href="Assets/Index.css" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -14,11 +14,17 @@
 <div class="AIcounter"></div>
 
 <button type="button" id="hit"> hit me</button>
-<button type="button" id ="hold">Hold</button>
+<button type="button" id="hold">Hold</button>
+<button type="button" id="reset">reset</button>
 
-<div class = "cards">
+<div class ="explanation">
+    <p>Press the 'hit me' button to give both you and the dealer a card. try to get as close as possible to 21 without going over it.
+    Once you feel your number is high enough, press 'Hold' to compare both your cards and those of the Dealer to see who won.
+    Hit 'reset' to both scores back to 0. </p>
+</div>
 
-<script src="Assets/Index.js"></script>
+<div class="cards">
+    <script src="Assets/Index.js"></script>
 </div>
 </body>
 </html>

@@ -1,4 +1,16 @@
 body {
-  background-color: lawngreen; }
+  background-color: #1db90c; }
+
+button {
+  margin: 80px;
+  width: 150px;
+  height: auto;
+  font-size: x-large; }
+
+.explanation {
+  width: 90%;
+  margin: auto;
+  font-size: large;
+  font-style: italic; }
 
 /*# sourceMappingURL=Index.css.map */
