@@ -2,7 +2,7 @@ body {
   background-color: #1db90c; }
 
 button {
-  margin: 80px;
+  margin: auto;
   width: 150px;
   height: auto;
   font-size: x-large; }
@@ -12,5 +12,17 @@ button {
   margin: auto;
   font-size: large;
   font-style: italic; }
+
+.buttons {
+  display: flex;
+  justify-content: center; }
+
+.score {
+  display: flex;
+  justify-content: center; }
+
+.images {
+  display: flex;
+  justify-content: center; }
 
 /*# sourceMappingURL=Index.css.map */

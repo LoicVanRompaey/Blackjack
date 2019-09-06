@@ -1,7 +1,7 @@
 var total = 0;
 var amount;
 var AIamount;
-var AItotal=0;
+var AItotal = 0;
 
 (function () {
 
@@ -10,13 +10,15 @@ var AItotal=0;
     }
 
     document.getElementById("hit").addEventListener("click", function () {
-        amount = randomGenerateCard(1, 10);
-
-
+        amount = randomGenerateCard(2, 11);
         total = total + amount;
 
+        if (amount === 11 && total > 21) {
+            total = total - 10;
+        }
 
-        console.log(total);
+
+        console.log("player total: " + total);
         alert("your total is: " + total);
 
         if (total === 21) {
@@ -34,10 +36,14 @@ var AItotal=0;
 
     document.getElementById("hold").addEventListener("click", function () {
         do {
-            AIamount = randomGenerateCard(1, 10);
+            AIamount = randomGenerateCard(2, 11);
             AItotal = AItotal + AIamount;
 
-            console.log(AItotal);
+            if (amount === 11 && total > 21) {
+                total = total - 10;
+            }
+
+            console.log("dealer total: " + AItotal);
 
         } while (AItotal < 17);
 
@@ -45,7 +51,7 @@ var AItotal=0;
         alert("the dealer's total is: " + AItotal);
 
         if (AItotal === 21) {
-            alert("Dealer has blackjack, you lose.");
+            alert("Dealer has blackjack.");
         }
 
         if (AItotal > 21) {
@@ -67,7 +73,8 @@ var AItotal=0;
     document.getElementById("reset").addEventListener("click", function () {
         total = 0;
         AItotal = 0;
-
+        console.log("player total: " + total);
+        console.log("dealer total: " + AItotal);
         alert("your total is: " + total + ". \n the dealer's total is: " + AItotal + "\n Reset complete")
     });
 
